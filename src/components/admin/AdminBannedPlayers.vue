@@ -113,6 +113,7 @@
 import Vue from "vue";
 import { Component, Watch } from "vue-property-decorator";
 import { BannedPlayer } from "@/store/admin/types";
+import { EGameMode } from "@/store/typings";
 
 @Component({ components: {} })
 export default class AdminBannedPlayers extends Vue {
@@ -127,9 +128,10 @@ export default class AdminBannedPlayers extends Vue {
         },
         { text: "Ban End Date", value: "endDate" },
         { text: "Is only banned from chat?", value: "isOnlyChatBan" },
-        { text: "Is IP banned?", value: "isIpBan"},
+        { text: "Game modes", value: "gameModes" },
+        { text: "Is IP banned?", value: "isIpBan" },
         { text: "Ban reason", value: "banReason" },
-        { text: "Actions", value: "actions", sortable: false },
+        { text: "Actions", value: "actions", sortable: false }
       ],
     };
   }
@@ -164,6 +166,7 @@ export default class AdminBannedPlayers extends Vue {
     battleTag: "",
     endDate: "",
     isOnlyChatBan: false,
+    gameModes: [] as EGameMode[],
     isIpBan: false,
     banReason: ""
   };
@@ -171,6 +174,7 @@ export default class AdminBannedPlayers extends Vue {
     battleTag: "",
     endDate: "",
     isOnlyChatBan: false,
+    gameModes: [],
     isIpBan: false,
     banReason: ""
   };

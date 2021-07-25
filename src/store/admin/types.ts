@@ -1,5 +1,4 @@
 import { PlayerOverview } from "@/store/ranking/types";
-import { EGameMode } from "../typings";
 
 export type AdminState = {
   total: number;
@@ -32,7 +31,7 @@ export interface BannedPlayer {
   battleTag: string;
   endDate: string;
   isOnlyChatBan: boolean;
-  gameModes: EGameMode[];
+  gameModes: number[];
   isIpBan: boolean;
   banReason: string;
 }
